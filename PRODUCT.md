@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Astro, deployed as a static site on free GitHub Pages through GitHub Actions. The user created the repository and authorized deployment when the site is ready.
+Astro, deployed as a static site on free GitHub Pages through GitHub Actions. The repository is already published. The user reviews local changes and handles commits and pushes unless they explicitly request the assistant to do so.
 
 ## Users
 
@@ -28,7 +28,7 @@ The current site describes a person-centered therapeutic relationship, with conv
 - German is the primary language; add complete English equivalents and an easy language switch to the equivalent page.
 - Preserve public German URLs where feasible, and account for older URLs that remain indexed.
 - The current site includes a contact form. The user chose a local “not yet available” notice on submit; no form data is sent or stored. Direct email and phone links work.
-- The repository is https://github.com/maxwilsonpereira/romina-website. Deploy there with GitHub Actions and provide the shareable GitHub Pages link. The existing custom domain cutover was not requested.
+- The repository is https://github.com/maxwilsonpereira/romina-website. GitHub Actions deploys it to GitHub Pages after a push. Leave new work local for review; do not commit, push, update the remote branch, or deploy unless the user explicitly requests that action.
 - Light German copy editing is allowed if every factual claim and page section remains faithful to the source.
 
 ## Brand Commitments
@@ -45,7 +45,7 @@ The current site describes a person-centered therapeutic relationship, with conv
 - Eleven distinct original image files have been downloaded to `.impeccable/source-images/`, with source URLs and sizes in its `manifest.json`. The page and heading inventory is `.impeccable/source-inventory.json`.
 - The existing `/datenschutzerklaerung/` URL currently returns 404. Legal text and its required publication route need review before deployment.
 - The new English text is a translation of the source content. The user chose a privacy placeholder because the prior policy URL was unavailable and deferred a live form endpoint.
-- The user's public GitHub repository is https://github.com/maxwilsonpereira/romina-website and is currently empty. The user authorized publication with GitHub Actions and requested a shareable deployed link after completion.
+- The user's public GitHub repository is https://github.com/maxwilsonpereira/romina-website and is already deployed through GitHub Actions. The current review workflow is to leave changes local until the user commits and pushes them or explicitly asks the assistant to do so.
 
 ## Product Principles
 
