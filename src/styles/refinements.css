@@ -22,6 +22,14 @@
 .offer-overview .article-layout { padding-block: 82px 96px; }
 .offer-overview .prose p:last-child { margin-bottom: 0; }
 .article-aside h2 { margin-top: 0; }
+.about-portrait { position: relative; }
+.about-portrait img {
+  position: absolute;
+  top: 30%;
+  height: calc(100% + 135px);
+  object-position: center 30%;
+  transform: translateY(-30%);
+}
 
 /* Reading and motion changes requested for the navigation and service links. */
 .service-links a {
@@ -160,6 +168,7 @@
   .themes-inner ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
+  .about-portrait { height: clamp(300px, 75vw, 520px); }
   .mobile-menu-content { width: calc(100% - 36px); }
   .mobile-services { grid-template-columns: 1fr; }
   .themes-section { padding: 62px 0 72px; }

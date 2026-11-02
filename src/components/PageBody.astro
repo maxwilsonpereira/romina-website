@@ -53,7 +53,7 @@ const offerTopics = blocks.find((block) => block.kind === 'list');
 <div class="interior-intro">
   <div class="interior-intro-inner">
     <div class="interior-heading"><a class="back-link" href={path(isService ? pageByKey.offer[lang] : pageByKey.home[lang])}>← {isService ? (de ? 'Therapeutisches Angebot' : 'Therapeutic offer') : (de ? 'Startseite' : 'Home')}</a><h1>{page.title[de ? 0 : 1]}</h1></div>
-    {page.image && <div class="interior-image"><img src={image(page.image)} alt={page.alt[de ? 0 : 1]} width="1000" height="680" /></div>}
+    {page.image && <div class:list={['interior-image', { 'about-portrait': page.key === 'about' }]}><img src={image(page.image)} alt={page.alt[de ? 0 : 1]} width={page.key === 'about' ? '684' : '1000'} height={page.key === 'about' ? '1024' : '680'} /></div>}
   </div>
 </div>
 {page.key === 'contact' ? <section class="interior-body"><div class="content-shell contact-page"><div class="location-column"><h2>{de ? 'Praxis Wien' : 'Vienna practice'}</h2><address>Mollardgasse 34/2/40-41<br />1060 {de ? 'Wien' : 'Vienna'}</address><h2>{de ? 'Praxis Mödling' : 'Mödling practice'}</h2><address>Klostergasse 19/5<br />2340 Mödling</address><p><a href="mailto:praxis@psychotherapie-lauzensky.at">praxis@psychotherapie-lauzensky.at</a><br /><a href="tel:+4368184087022">0681/840 870 22</a></p></div><ContactForm lang={lang} /></div></section> : page.key === 'offer' ? <>
