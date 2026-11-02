@@ -1,0 +1,22 @@
+{
+  "allowUncovered": true,
+  "regions": [
+    {"id":"plaster","kind":"texture","pixelBox":{"x":0,"y":0,"w":1536,"h":1024},"bleed":true,"note":"Warm ivory plaster material across the page, subtly grained; can be recreated as a CSS color surface per user-approved conceptual mockup."},
+    {"id":"masthead","kind":"chrome","pixelBox":{"x":144,"y":0,"w":1320,"h":96},"note":"Transparent top navigation row with brand at left and links across."},
+    {"id":"brand","kind":"text","pixelBox":{"x":164,"y":24,"w":294,"h":52},"note":"Two-line Mag. Romina Lauzensky identity in dark ink."},
+    {"id":"navigation","kind":"text","pixelBox":{"x":545,"y":27,"w":646,"h":33},"note":"Primary navigation labels."},
+    {"id":"language","kind":"control","pixelBox":{"x":1360,"y":29,"w":82,"h":30},"note":"DE / EN language switch."},
+    {"id":"room-photo","kind":"image","pixelBox":{"x":143,"y":99,"w":706,"h":668},"bleed":true,"note":"Dominant practice room photograph; use the unchanged original Praxis2 image. Mockup edits the photo illustratively."},
+    {"id":"door-frame","kind":"chrome","codeDrawn":true,"container":true,"pixelBox":{"x":0,"y":0,"w":991,"h":768},"note":"CSS doorway and border framing the original practice photo."},
+    {"id":"hero-title","kind":"text","pixelBox":{"x":1011,"y":144,"w":465,"h":183},"note":"Large serif statement about development, joy and inner stability."},
+    {"id":"contact-heading","kind":"text","pixelBox":{"x":1032,"y":374,"w":345,"h":32},"note":"Contact form heading in serif."},
+    {"id":"name-field","kind":"control","pixelBox":{"x":1037,"y":416,"w":371,"h":40},"note":"Name input."},
+    {"id":"email-field","kind":"control","pixelBox":{"x":1037,"y":466,"w":371,"h":39},"note":"Email input."},
+    {"id":"message-field","kind":"control","pixelBox":{"x":1037,"y":516,"w":371,"h":79},"note":"Message field."},
+    {"id":"contact-button","kind":"control","pixelBox":{"x":1037,"y":607,"w":371,"h":42},"note":"Terracotta contact action."},
+    {"id":"direct-contact","kind":"text","pixelBox":{"x":1037,"y":666,"w":362,"h":59},"note":"Direct email and phone contact."},
+    {"id":"offer-title","kind":"text","pixelBox":{"x":166,"y":834,"w":611,"h":99},"note":"Serif offer heading at the next section."},
+    {"id":"offer-intro","kind":"text","pixelBox":{"x":167,"y":943,"w":614,"h":71},"note":"Introductory offer paragraph."},
+    {"id":"offer-photo","kind":"image","pixelBox":{"x":902,"y":773,"w":634,"h":251},"bleed":true,"note":"Second section practice atmosphere photo; use an unchanged original source image instead of the mockup alteration."}
+  ]
+}

@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { image, pageByKey, path, serviceKeys, type Lang } from '../data/content';
+const lang: Lang = 'de';
+const page = pageByKey.home;
+const services = serviceKeys.map((key) => pageByKey[key]);
+---
+<Base page={page} lang={lang} description="Mag. Romina Lauzensky bietet personzentrierte Psychotherapie für Einzelpersonen, Paare und Familien in Wien und Mödling.">
+  <section class="hero">
+    <div class="hero-photo"><div class="doorway"><img src={image('Praxis2-768x512.jpg')} alt="Mag. Romina Lauzensky im Therapieraum" width="768" height="512" fetchpriority="high" /></div></div>
+    <div class="hero-copy"><h1>Gemeinsam schaffen wir Raum für Entwicklung, Lebensfreude und innere Stabilität.</h1><ContactForm lang={lang} compact /></div>
+  </section>
+  <section class="home-offer"><div class="home-offer-copy"><h2>Ein geschützter Raum für das, was Sie bewegt.</h2><p>Als personzentrierte Psychotherapeutin steht für mich die therapeutische Beziehung im Mittelpunkt. Gemeinsam erkunden wir neue Perspektiven – in Ihrem Tempo und mit Raum für das, was Sie mitbringen.</p><a class="text-link" href={path(pageByKey.offer.de)}>Mein therapeutisches Angebot <span aria-hidden="true">↗</span></a></div><div class="home-offer-image"><img src={image('09_Romy_cut.jpeg')} alt="Porträt von Mag. Romina Lauzensky" width="900" height="1200" loading="lazy" /></div></section>
+  <section class="home-services content-shell"><div class="section-heading"><h2>Mein Angebot</h2><p>Psychotherapie für verschiedene Lebenssituationen und Formen des Miteinanders.</p></div><div class="service-links">{services.map((service) => <a href={path(service.de)}><span>{service.title[0]}</span><span aria-hidden="true">↗</span></a>)}</div></section>
+  <section class="home-perspective"><div class="content-shell perspective-grid"><div><h2>Neue Perspektiven entwickeln</h2><p>Das Leben geht bisweilen eigene Wege und fordert uns heraus, uns neu zu orientieren. So schmerzhaft und belastend Krisen auch sein mögen, sie bergen zugleich die Chance auf persönliches Wachstum und Entwicklung. Gerne begleite ich Sie auf diesem Weg mit meiner langjährigen Erfahrung und meinem Fundus an Methoden.</p><a class="text-link" href={path(pageByKey.about.de)}>Über mich <span aria-hidden="true">↗</span></a></div><img src={image('Romy13a.jpg')} alt="Porträt von Mag. Romina Lauzensky" width="2048" height="1366" loading="lazy" /></div></section>
+  <section class="home-close content-shell"><h2>Der erste Schritt ist ein Gespräch.</h2><p>Erfahren Sie mehr über das Erstgespräch und die Rahmenbedingungen oder nehmen Sie direkt Kontakt auf.</p><div><a class="button-link" href={path(pageByKey.contact.de)}>Kontakt aufnehmen <span aria-hidden="true">→</span></a><a class="text-link" href={path(pageByKey.practical.de)}>Rahmenbedingungen <span aria-hidden="true">↗</span></a></div></section>
+</Base>

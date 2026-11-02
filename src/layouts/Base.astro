@@ -1,0 +1,95 @@
+---
+import { image, pageByKey, path, serviceKeys, type Lang, type Page } from '../data/content';
+import '../styles/global.css';
+
+interface Props { page: Page; lang: Lang; description: string }
+const { page, lang, description } = Astro.props;
+const isDe = lang === 'de';
+const route = page[lang];
+const title = `${page.title[isDe ? 0 : 1]} · Mag. Romina Lauzensky`;
+const canonical = new URL(path(route), Astro.site).toString();
+const deUrl = new URL(path(page.de), Astro.site).toString();
+const enUrl = new URL(path(page.en), Astro.site).toString();
+const services = serviceKeys.map((key) => pageByKey[key]);
+const nav = [pageByKey.home, pageByKey.offer, pageByKey.practical, pageByKey.about, pageByKey.contact];
+const label = (p: Page) => p.title[isDe ? 0 : 1];
+const schema = {
+  '@context': 'https://schema.org', '@type': 'Person', name: 'Mag. Romina Lauzensky',
+  jobTitle: isDe ? 'Psychotherapeutin' : 'Psychotherapist',
+  email: 'praxis@psychotherapie-lauzensky.at', telephone: '+43 681 840 870 22',
+  address: [
+    { '@type': 'PostalAddress', streetAddress: 'Mollardgasse 34/2/40-41', postalCode: '1060', addressLocality: 'Wien', addressCountry: 'AT' },
+    { '@type': 'PostalAddress', streetAddress: 'Klostergasse 19/5', postalCode: '2340', addressLocality: 'Mödling', addressCountry: 'AT' }
+  ]
+};
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e9e2d7" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {page.key === 'privacy' && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href={new URL(path('/sitemap-index.xml'), Astro.site).toString()} />
+    <link rel="alternate" hreflang="de-AT" href={deUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={deUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={isDe ? 'de_AT' : 'en_US'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image('Praxis2-768x512.jpg'), Astro.site).toString()} />
+    <link rel="icon" href={path('/favicon.svg')} type="image/svg+xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">{isDe ? 'Zum Inhalt springen' : 'Skip to content'}</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href={path(isDe ? '/' : '/en/')}>
+          <span>Mag. Romina Lauzensky</span><small>{isDe ? 'Psychotherapie' : 'Psychotherapy'}</small>
+        </a>
+        <nav class="desktop-nav" aria-label={isDe ? 'Hauptnavigation' : 'Main navigation'}>
+          <a href={path(nav[0][lang])} aria-current={page.key === 'home' ? 'page' : undefined}>{label(nav[0])}</a>
+          <div class="nav-offer">
+            <a href={path(nav[1][lang])} aria-current={page.key === 'offer' ? 'page' : undefined}>{label(nav[1])}</a>
+            <details class="offer-menu"><summary aria-label={isDe ? 'Angebote anzeigen' : 'Show services'}><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5" /></svg></summary>
+              <div class="offer-dropdown">{services.map((s) => <a href={path(s[lang])} aria-current={page.key === s.key ? 'page' : undefined}>{label(s)}</a>)}</div>
+            </details>
+          </div>
+          {nav.slice(2).map((p) => <a href={path(p[lang])} aria-current={page.key === p.key ? 'page' : undefined}>{label(p)}</a>)}
+        </nav>
+        <div class="header-end">
+          <nav class="languages" aria-label={isDe ? 'Sprache' : 'Language'}><a href={path(page.de)} lang="de" aria-current={isDe ? 'page' : undefined}>DE</a><span aria-hidden="true">/</span><a href={path(page.en)} lang="en" aria-current={!isDe ? 'page' : undefined}>EN</a></nav>
+          <details class="mobile-menu"><summary aria-label={isDe ? 'Menü öffnen' : 'Open menu'}><span></span><span></span></summary>
+            <nav aria-label={isDe ? 'Mobile Navigation' : 'Mobile navigation'}>
+              {nav.map((p) => <a href={path(p[lang])} aria-current={page.key === p.key ? 'page' : undefined}>{label(p)}</a>)}
+              <div class="mobile-services">{services.map((s) => <a href={path(s[lang])} aria-current={page.key === s.key ? 'page' : undefined}>{label(s)}</a>)}</div>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+    <main id="content"><slot /></main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div><span class="footer-name">Mag. Romina Lauzensky</span><p>{isDe ? 'Psychotherapie in Wien und Mödling' : 'Psychotherapy in Vienna and Mödling'}</p></div>
+        <div class="footer-links"><a href={path(pageByKey.contact[lang])}>{label(pageByKey.contact)}</a><a href={path(pageByKey.imprint[lang])}>{label(pageByKey.imprint)}</a><a href={path(pageByKey.privacy[lang])}>{label(pageByKey.privacy)}</a></div>
+        <div class="footer-direct"><a href="mailto:praxis@psychotherapie-lauzensky.at">praxis@psychotherapie-lauzensky.at</a><a href="tel:+4368184087022">+43 681 840 870 22</a></div>
+      </div>
+      <div class="footer-bottom">© {new Date().getFullYear()} Mag. Romina Lauzensky</div>
+    </footer>
+    <script>
+      document.querySelectorAll('.mobile-menu a, .offer-dropdown a').forEach((link) => link.addEventListener('click', () => {
+        document.querySelectorAll('details[open]').forEach((details) => details.removeAttribute('open'));
+      }));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') document.querySelectorAll('details[open]').forEach((details) => details.removeAttribute('open'));
+      });
+    </script>
+  </body>
+</html>

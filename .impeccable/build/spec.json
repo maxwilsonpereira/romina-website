@@ -1,0 +1,1088 @@
+{
+  "tool": "comp-spec",
+  "version": 1,
+  "createdAt": "2026-11-02T14:39:31.769Z",
+  "comp": ".impeccable/mocks/comp-2-doorway.png",
+  "warnings": [
+    "region plaster: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region room-photo: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region door-frame: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)",
+    "region door-frame: \"container\": true set in the regions file (the region-size refusal is overridden: one undivided element)",
+    "region offer-photo: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)"
+  ],
+  "uncoveredInkCells": [
+    "G1",
+    "G2",
+    "G3",
+    "H3",
+    "I3",
+    "J4",
+    "G6",
+    "H6",
+    "I6",
+    "J7"
+  ],
+  "compSize": {
+    "width": 1536,
+    "height": 1024
+  },
+  "aspect": 1.5,
+  "orientation": "landscape",
+  "palette": [
+    {
+      "hex": "#ebe5db",
+      "coverage": 0.6303
+    },
+    {
+      "hex": "#b7a895",
+      "coverage": 0.1875
+    },
+    {
+      "hex": "#141110",
+      "coverage": 0.0987
+    },
+    {
+      "hex": "#747f74",
+      "coverage": 0.0676
+    },
+    {
+      "hex": "#6e5a42",
+      "coverage": 0.016
+    }
+  ],
+  "bands": [
+    {
+      "y": 0.0353,
+      "strength": 0.3638
+    },
+    {
+      "y": 0.2706,
+      "strength": 0.2057
+    },
+    {
+      "y": 0.5882,
+      "strength": 0.2178
+    },
+    {
+      "y": 0.6353,
+      "strength": 0.3604
+    },
+    {
+      "y": 0.7529,
+      "strength": 0.8713
+    }
+  ],
+  "regions": [
+    {
+      "id": "plaster",
+      "kind": "texture",
+      "note": "Warm ivory plaster material across the page, subtly grained; can be recreated as a CSS color surface per user-approved conceptual mockup.",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
+      },
+      "px": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 1024
+      },
+      "aspect": 1.5,
+      "palette": [
+        {
+          "hex": "#ebe5db",
+          "coverage": 0.6303
+        },
+        {
+          "hex": "#b7a895",
+          "coverage": 0.1875
+        },
+        {
+          "hex": "#141110",
+          "coverage": 0.0987
+        },
+        {
+          "hex": "#747f74",
+          "coverage": 0.0676
+        },
+        {
+          "hex": "#6e5a42",
+          "coverage": 0.016
+        }
+      ],
+      "detail": {
+        "energy": 26.6049
+      },
+      "medium": "raster",
+      "plate": "assets/plates/plaster.png",
+      "text": null
+    },
+    {
+      "id": "masthead",
+      "kind": "chrome",
+      "note": "Transparent top navigation row with brand at left and links across.",
+      "grid": null,
+      "box": {
+        "x": 0.0938,
+        "y": 0,
+        "w": 0.8594,
+        "h": 0.0938
+      },
+      "px": {
+        "x": 144,
+        "y": 0,
+        "w": 1320,
+        "h": 96
+      },
+      "aspect": 13.75,
+      "palette": [
+        {
+          "hex": "#e5e0d6",
+          "coverage": 0.9099
+        },
+        {
+          "hex": "#beb19f",
+          "coverage": 0.0685
+        },
+        {
+          "hex": "#131a18",
+          "coverage": 0.0094
+        },
+        {
+          "hex": "#83847e",
+          "coverage": 0.0068
+        },
+        {
+          "hex": "#343f39",
+          "coverage": 0.0055
+        }
+      ],
+      "detail": {
+        "energy": 14.7744
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      }
+    },
+    {
+      "id": "brand",
+      "kind": "text",
+      "note": "Two-line Mag. Romina Lauzensky identity in dark ink.",
+      "grid": null,
+      "box": {
+        "x": 0.1068,
+        "y": 0.0234,
+        "w": 0.1914,
+        "h": 0.0508
+      },
+      "px": {
+        "x": 164,
+        "y": 24,
+        "w": 294,
+        "h": 52
+      },
+      "aspect": 5.6538,
+      "palette": [
+        {
+          "hex": "#e9e6d9",
+          "coverage": 0.8455
+        },
+        {
+          "hex": "#0e1614",
+          "coverage": 0.055
+        },
+        {
+          "hex": "#6d7469",
+          "coverage": 0.0439
+        },
+        {
+          "hex": "#9a9e94",
+          "coverage": 0.0287
+        },
+        {
+          "hex": "#c0c0b6",
+          "coverage": 0.0269
+        }
+      ],
+      "detail": {
+        "energy": 60.3526
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 18,
+          "capHeightPx": 20.7,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6506,
+          "advTall": 0.6988,
+          "advX": 0.5783,
+          "gap": 0.0723,
+          "xRatio": 0.6859,
+          "stemW": 0.1422,
+          "contrast": 1.531,
+          "serif": 1.7714,
+          "densTall": 0.4222,
+          "densX": 0.4828,
+          "weight": 0.4222
+        },
+        "widthClass": "condensed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "navigation",
+      "kind": "text",
+      "note": "Primary navigation labels.",
+      "grid": null,
+      "box": {
+        "x": 0.3548,
+        "y": 0.0264,
+        "w": 0.4206,
+        "h": 0.0322
+      },
+      "px": {
+        "x": 545,
+        "y": 27,
+        "w": 646,
+        "h": 33
+      },
+      "aspect": 19.5758,
+      "palette": [
+        {
+          "hex": "#e2ddd2",
+          "coverage": 0.8657
+        },
+        {
+          "hex": "#aea494",
+          "coverage": 0.0763
+        },
+        {
+          "hex": "#5d605c",
+          "coverage": 0.0308
+        },
+        {
+          "hex": "#d6c8a8",
+          "coverage": 0.0165
+        },
+        {
+          "hex": "#1a2020",
+          "coverage": 0.0108
+        }
+      ],
+      "detail": {
+        "energy": 34.6107
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 49,
+          "capHeightPx": 14,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.4999,
+          "advTall": 0.6071,
+          "advX": 0.4999,
+          "gap": 0.0714,
+          "xRatio": 0.5996,
+          "stemW": 0.1508,
+          "contrast": 1.0415,
+          "serif": 0.4978,
+          "densTall": 0.4863,
+          "densX": 0.6258,
+          "weight": 0.4863
+        },
+        "widthClass": "condensed",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "language",
+      "kind": "control",
+      "note": "DE / EN language switch.",
+      "grid": null,
+      "box": {
+        "x": 0.8854,
+        "y": 0.0283,
+        "w": 0.0534,
+        "h": 0.0293
+      },
+      "px": {
+        "x": 1360,
+        "y": 29,
+        "w": 82,
+        "h": 30
+      },
+      "aspect": 2.7333,
+      "palette": [
+        {
+          "hex": "#e7ded9",
+          "coverage": 0.9176
+        },
+        {
+          "hex": "#6c716a",
+          "coverage": 0.0323
+        },
+        {
+          "hex": "#a0ab9d",
+          "coverage": 0.0215
+        },
+        {
+          "hex": "#4e554b",
+          "coverage": 0.0179
+        },
+        {
+          "hex": "#232823",
+          "coverage": 0.0108
+        }
+      ],
+      "detail": {
+        "energy": 12.0895
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      }
+    },
+    {
+      "id": "room-photo",
+      "kind": "image",
+      "note": "Dominant practice room photograph; use the unchanged original Praxis2 image. Mockup edits the photo illustratively.",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0.0931,
+        "y": 0.0967,
+        "w": 0.4596,
+        "h": 0.6523
+      },
+      "px": {
+        "x": 143,
+        "y": 99,
+        "w": 706,
+        "h": 668
+      },
+      "aspect": 1.0569,
+      "palette": [
+        {
+          "hex": "#e3d6c7",
+          "coverage": 0.4483
+        },
+        {
+          "hex": "#141110",
+          "coverage": 0.3317
+        },
+        {
+          "hex": "#6c786a",
+          "coverage": 0.1201
+        },
+        {
+          "hex": "#c8aa90",
+          "coverage": 0.0594
+        },
+        {
+          "hex": "#a67143",
+          "coverage": 0.0404
+        }
+      ],
+      "detail": {
+        "energy": 16.4764
+      },
+      "medium": "raster",
+      "plate": "assets/plates/room-photo.png",
+      "text": null
+    },
+    {
+      "id": "door-frame",
+      "kind": "chrome",
+      "note": "CSS doorway and border framing the original practice photo.",
+      "grid": null,
+      "codeDrawn": true,
+      "container": true,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 0.6452,
+        "h": 0.75
+      },
+      "px": {
+        "x": 0,
+        "y": 0,
+        "w": 991,
+        "h": 768
+      },
+      "aspect": 1.2904,
+      "palette": [
+        {
+          "hex": "#dfd6c8",
+          "coverage": 0.539
+        },
+        {
+          "hex": "#141110",
+          "coverage": 0.1958
+        },
+        {
+          "hex": "#ae9a83",
+          "coverage": 0.1674
+        },
+        {
+          "hex": "#707a6c",
+          "coverage": 0.0728
+        },
+        {
+          "hex": "#333018",
+          "coverage": 0.025
+        }
+      ],
+      "detail": {
+        "energy": 20.0918
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      }
+    },
+    {
+      "id": "hero-title",
+      "kind": "text",
+      "note": "Large serif statement about development, joy and inner stability.",
+      "grid": null,
+      "box": {
+        "x": 0.6582,
+        "y": 0.1406,
+        "w": 0.3027,
+        "h": 0.1787
+      },
+      "px": {
+        "x": 1011,
+        "y": 144,
+        "w": 465,
+        "h": 183
+      },
+      "aspect": 2.541,
+      "palette": [
+        {
+          "hex": "#e5ded7",
+          "coverage": 0.8535
+        },
+        {
+          "hex": "#081715",
+          "coverage": 0.0642
+        },
+        {
+          "hex": "#bdbcb6",
+          "coverage": 0.0325
+        },
+        {
+          "hex": "#0e2b1b",
+          "coverage": 0.0263
+        },
+        {
+          "hex": "#77817a",
+          "coverage": 0.0235
+        }
+      ],
+      "detail": {
+        "energy": 61.23
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 4,
+          "glyphs": 65,
+          "capHeightPx": 30,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5902,
+          "advTall": 0.6073,
+          "advX": 0.5902,
+          "gap": 0.0656,
+          "xRatio": 0.6786,
+          "stemW": 0.1258,
+          "contrast": 1.9079,
+          "serif": 1.5165,
+          "densTall": 0.3838,
+          "densX": 0.4345,
+          "weight": 0.3838
+        },
+        "widthClass": "normal",
+        "weightClass": "regular",
+        "chosen": {
+          "family": "Playfair Display",
+          "weight": 400,
+          "fontSizePx": 43,
+          "source": "catalog",
+          "estimatedSize": true,
+          "stamp": "0233114090a7"
+        }
+      }
+    },
+    {
+      "id": "contact-heading",
+      "kind": "text",
+      "note": "Contact form heading in serif.",
+      "grid": null,
+      "box": {
+        "x": 0.6719,
+        "y": 0.3652,
+        "w": 0.2246,
+        "h": 0.0313
+      },
+      "px": {
+        "x": 1032,
+        "y": 374,
+        "w": 345,
+        "h": 32
+      },
+      "aspect": 10.7813,
+      "palette": [
+        {
+          "hex": "#eeeae8",
+          "coverage": 0.8918
+        },
+        {
+          "hex": "#0e1516",
+          "coverage": 0.0417
+        },
+        {
+          "hex": "#838885",
+          "coverage": 0.0353
+        },
+        {
+          "hex": "#adb1aa",
+          "coverage": 0.0176
+        },
+        {
+          "hex": "#535a59",
+          "coverage": 0.0136
+        }
+      ],
+      "detail": {
+        "energy": 57.8659
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 26,
+          "capHeightPx": 16,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5641,
+          "advTall": 0.6268,
+          "advX": 0.5641,
+          "gap": 0.094,
+          "xRatio": 0.6414,
+          "stemW": 0.1473,
+          "contrast": 1.4818,
+          "serif": 1.514,
+          "densTall": 0.4555,
+          "densX": 0.5209,
+          "weight": 0.4555
+        },
+        "widthClass": "condensed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "name-field",
+      "kind": "control",
+      "note": "Name input.",
+      "grid": null,
+      "box": {
+        "x": 0.6751,
+        "y": 0.4063,
+        "w": 0.2415,
+        "h": 0.0391
+      },
+      "px": {
+        "x": 1037,
+        "y": 416,
+        "w": 371,
+        "h": 40
+      },
+      "aspect": 9.275,
+      "palette": [
+        {
+          "hex": "#f5f4e6",
+          "coverage": 0.9942
+        },
+        {
+          "hex": "#96918d",
+          "coverage": 0.0052
+        },
+        {
+          "hex": "#b8b8a8",
+          "coverage": 0.0006
+        }
+      ],
+      "detail": {
+        "energy": 4.896
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      }
+    },
+    {
+      "id": "email-field",
+      "kind": "control",
+      "note": "Email input.",
+      "grid": null,
+      "box": {
+        "x": 0.6751,
+        "y": 0.4551,
+        "w": 0.2415,
+        "h": 0.0381
+      },
+      "px": {
+        "x": 1037,
+        "y": 466,
+        "w": 371,
+        "h": 39
+      },
+      "aspect": 9.5128,
+      "palette": [
+        {
+          "hex": "#f6f5e6",
+          "coverage": 0.9913
+        },
+        {
+          "hex": "#a29c97",
+          "coverage": 0.0068
+        },
+        {
+          "hex": "#d8cdc3",
+          "coverage": 0.0019
+        }
+      ],
+      "detail": {
+        "energy": 4.9836
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      }
+    },
+    {
+      "id": "message-field",
+      "kind": "control",
+      "note": "Message field.",
+      "grid": null,
+      "box": {
+        "x": 0.6751,
+        "y": 0.5039,
+        "w": 0.2415,
+        "h": 0.0771
+      },
+      "px": {
+        "x": 1037,
+        "y": 516,
+        "w": 371,
+        "h": 79
+      },
+      "aspect": 4.6962,
+      "palette": [
+        {
+          "hex": "#f6f5e7",
+          "coverage": 0.9967
+        },
+        {
+          "hex": "#c3b8b8",
+          "coverage": 0.0018
+        },
+        {
+          "hex": "#959585",
+          "coverage": 0.0015
+        }
+      ],
+      "detail": {
+        "energy": 3.3274
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      }
+    },
+    {
+      "id": "contact-button",
+      "kind": "control",
+      "note": "Terracotta contact action.",
+      "grid": null,
+      "box": {
+        "x": 0.6751,
+        "y": 0.5928,
+        "w": 0.2415,
+        "h": 0.041
+      },
+      "px": {
+        "x": 1037,
+        "y": 607,
+        "w": 371,
+        "h": 42
+      },
+      "aspect": 8.8333,
+      "palette": [
+        {
+          "hex": "#b25746",
+          "coverage": 0.9401
+        },
+        {
+          "hex": "#c07f6b",
+          "coverage": 0.0202
+        },
+        {
+          "hex": "#dbb1a2",
+          "coverage": 0.019
+        },
+        {
+          "hex": "#f5ede6",
+          "coverage": 0.0184
+        },
+        {
+          "hex": "#a83c28",
+          "coverage": 0.0023
+        }
+      ],
+      "detail": {
+        "energy": 14.7958
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      }
+    },
+    {
+      "id": "direct-contact",
+      "kind": "text",
+      "note": "Direct email and phone contact.",
+      "grid": null,
+      "box": {
+        "x": 0.6751,
+        "y": 0.6504,
+        "w": 0.2357,
+        "h": 0.0576
+      },
+      "px": {
+        "x": 1037,
+        "y": 666,
+        "w": 362,
+        "h": 59
+      },
+      "aspect": 6.1356,
+      "palette": [
+        {
+          "hex": "#e8e5d8",
+          "coverage": 0.8967
+        },
+        {
+          "hex": "#646b5c",
+          "coverage": 0.0589
+        },
+        {
+          "hex": "#a0a293",
+          "coverage": 0.0242
+        },
+        {
+          "hex": "#b0634e",
+          "coverage": 0.0151
+        },
+        {
+          "hex": "#454d38",
+          "coverage": 0.005
+        }
+      ],
+      "detail": {
+        "energy": 26.2658
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 2,
+          "glyphs": 48,
+          "capHeightPx": 13.7,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5002,
+          "advTall": 0.396,
+          "advX": 0.5209,
+          "gap": 0.0834,
+          "xRatio": 0.7453,
+          "stemW": 0.1575,
+          "contrast": 1.0555,
+          "serif": 0.6288,
+          "densTall": 0.5408,
+          "densX": 0.5775,
+          "weight": 0.5408
+        },
+        "widthClass": "condensed",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "offer-title",
+      "kind": "text",
+      "note": "Serif offer heading at the next section.",
+      "grid": null,
+      "box": {
+        "x": 0.1081,
+        "y": 0.8145,
+        "w": 0.3978,
+        "h": 0.0967
+      },
+      "px": {
+        "x": 166,
+        "y": 834,
+        "w": 611,
+        "h": 99
+      },
+      "aspect": 6.1717,
+      "palette": [
+        {
+          "hex": "#f7f7f2",
+          "coverage": 0.8775
+        },
+        {
+          "hex": "#0a1311",
+          "coverage": 0.0657
+        },
+        {
+          "hex": "#44514f",
+          "coverage": 0.022
+        },
+        {
+          "hex": "#b2b9b4",
+          "coverage": 0.018
+        },
+        {
+          "hex": "#808a86",
+          "coverage": 0.0168
+        }
+      ],
+      "detail": {
+        "energy": 62.8056
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 2,
+          "glyphs": 34,
+          "capHeightPx": 30.3,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.578,
+          "advTall": 0.6834,
+          "advX": 0.5702,
+          "gap": 0.0671,
+          "xRatio": 0.6743,
+          "stemW": 0.131,
+          "contrast": 1.7139,
+          "serif": 1.3894,
+          "densTall": 0.3666,
+          "densX": 0.4347,
+          "weight": 0.3666
+        },
+        "widthClass": "condensed",
+        "weightClass": "regular",
+        "chosen": {
+          "family": "Libre Caslon Text",
+          "weight": 400,
+          "fontSizePx": 43,
+          "source": "catalog",
+          "estimatedSize": true,
+          "stamp": "2743467f6e25"
+        }
+      }
+    },
+    {
+      "id": "offer-intro",
+      "kind": "text",
+      "note": "Introductory offer paragraph.",
+      "grid": null,
+      "box": {
+        "x": 0.1087,
+        "y": 0.9209,
+        "w": 0.3997,
+        "h": 0.0693
+      },
+      "px": {
+        "x": 167,
+        "y": 943,
+        "w": 614,
+        "h": 71
+      },
+      "aspect": 8.6479,
+      "palette": [
+        {
+          "hex": "#f8f7f1",
+          "coverage": 0.8369
+        },
+        {
+          "hex": "#676560",
+          "coverage": 0.0675
+        },
+        {
+          "hex": "#cac8c4",
+          "coverage": 0.0574
+        },
+        {
+          "hex": "#999792",
+          "coverage": 0.0374
+        },
+        {
+          "hex": "#484838",
+          "coverage": 0.0008
+        }
+      ],
+      "detail": {
+        "energy": 38.8769
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 3,
+          "glyphs": 157,
+          "capHeightPx": 12.2,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6329,
+          "advTall": 0.5996,
+          "advX": 0.6329,
+          "gap": 0.1101,
+          "xRatio": 0.7402,
+          "stemW": 0.1523,
+          "contrast": 1.0675,
+          "serif": 0.333,
+          "densTall": 0.452,
+          "densX": 0.5268,
+          "weight": 0.452
+        },
+        "widthClass": "normal",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "offer-photo",
+      "kind": "image",
+      "note": "Second section practice atmosphere photo; use an unchanged original source image instead of the mockup alteration.",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0.5872,
+        "y": 0.7549,
+        "w": 0.4128,
+        "h": 0.2451
+      },
+      "px": {
+        "x": 902,
+        "y": 773,
+        "w": 634,
+        "h": 251
+      },
+      "aspect": 2.5259,
+      "palette": [
+        {
+          "hex": "#d3c0ad",
+          "coverage": 0.4725
+        },
+        {
+          "hex": "#7c8d83",
+          "coverage": 0.2576
+        },
+        {
+          "hex": "#b09576",
+          "coverage": 0.0998
+        },
+        {
+          "hex": "#f4debf",
+          "coverage": 0.0898
+        },
+        {
+          "hex": "#506159",
+          "coverage": 0.0803
+        }
+      ],
+      "detail": {
+        "energy": 22.2398
+      },
+      "medium": "raster",
+      "plate": "assets/plates/offer-photo.png",
+      "text": null
+    }
+  ],
+  "compSha256": "edd217d0cf10b001a1b1ca815a558b1301909c44ea96ac4847b73c0158397372",
+  "regionsSource": {
+    "path": ".impeccable/build/regions.json",
+    "sha256": "c6ae9c8e5c4a86c80364c4d282f284bd76bb410ec8e47d6f7c9e3c1de811680d"
+  }
+}

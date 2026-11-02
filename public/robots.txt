@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /romina-website/
+
+Sitemap: https://maxwilsonpereira.github.io/romina-website/sitemap-index.xml

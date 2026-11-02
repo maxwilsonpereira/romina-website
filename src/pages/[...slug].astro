@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import PageBody from '../components/PageBody.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { image, pageByKey, pages, path, serviceKeys, type Lang, type Page } from '../data/content';
+
+export function getStaticPaths() {
+  return pages.flatMap((page) => ([
+    ...(page.key === 'home' ? [] : [{ params: { slug: page.de.slice(1, -1) }, props: { page, lang: 'de' as Lang } }]),
+    { params: { slug: page.en.slice(1, -1) }, props: { page, lang: 'en' as Lang } }
+  ]));
+}
+interface Props { page: Page; lang: Lang }
+const { page, lang } = Astro.props;
+const de = lang === 'de';
+const description = page.key === 'home'
+  ? 'Mag. Romina Lauzensky offers person-centred psychotherapy for individuals, couples and families in Vienna and Mödling.'
+  : `${page.title[de ? 0 : 1]} · ${de ? 'Psychotherapie bei Mag. Romina Lauzensky in Wien und Mödling.' : 'Psychotherapy with Mag. Romina Lauzensky in Vienna and Mödling.'}`;
+const services = serviceKeys.map((key) => pageByKey[key]);
+---
+<Base page={page} lang={lang} description={description}>
+  {page.key === 'home' ? <>
+    <section class="hero"><div class="hero-photo"><div class="doorway"><img src={image('Praxis2-768x512.jpg')} alt="Mag. Romina Lauzensky in the therapy room" width="768" height="512" fetchpriority="high" /></div></div><div class="hero-copy"><h1>Together we create space for growth, joy in life and inner stability.</h1><ContactForm lang={lang} compact /></div></section>
+    <section class="home-offer"><div class="home-offer-copy"><h2>A safe space for what matters to you.</h2><p>As a person-centred psychotherapist, I place the therapeutic relationship at the heart of my work. Together we explore new perspectives at your pace, making room for what you bring.</p><a class="text-link" href={path(pageByKey.offer.en)}>Explore my therapeutic offer <span aria-hidden="true">↗</span></a></div><div class="home-offer-image"><img src={image('09_Romy_cut.jpeg')} alt="Portrait of Mag. Romina Lauzensky" width="900" height="1200" loading="lazy" /></div></section>
+    <section class="home-services content-shell"><div class="section-heading"><h2>How I work</h2><p>Psychotherapy for different life situations and ways of being together.</p></div><div class="service-links">{services.map((service) => <a href={path(service.en)}><span>{service.title[1]}</span><span aria-hidden="true">↗</span></a>)}</div></section>
+    <section class="home-perspective"><div class="content-shell perspective-grid"><div><h2>Developing new perspectives</h2><p>Life sometimes takes its own course and asks us to find a new direction. As painful and difficult as crises can be, they may also offer opportunities for personal growth and development. I would be glad to accompany you with my many years of experience and range of methods.</p><a class="text-link" href={path(pageByKey.about.en)}>About me <span aria-hidden="true">↗</span></a></div><img src={image('Romy13a.jpg')} alt="Portrait of Mag. Romina Lauzensky" width="2048" height="1366" loading="lazy" /></div></section>
+    <section class="home-close content-shell"><h2>The first step is a conversation.</h2><p>Learn more about the first meeting and practical information, or get in touch directly.</p><div><a class="button-link" href={path(pageByKey.contact.en)}>Get in touch <span aria-hidden="true">→</span></a><a class="text-link" href={path(pageByKey.practical.en)}>Practical information <span aria-hidden="true">↗</span></a></div></section>
+  </> : <PageBody page={page} lang={lang} />}
+</Base>

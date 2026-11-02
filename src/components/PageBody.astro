@@ -1,0 +1,66 @@
+---
+import { image, pageByKey, path, serviceKeys, sourceLines, type Lang, type Page } from '../data/content';
+import ContactForm from './ContactForm.astro';
+interface Props { page: Page; lang: Lang }
+const { page, lang } = Astro.props;
+const de = lang === 'de';
+const lines = sourceLines(page, lang).slice(1);
+const enHeadings: Record<string, string[]> = {
+  offer: ['Areas I work with'], individual: ['Areas of expertise'],
+  couples: ['Understanding and changing relationship patterns', 'Space for change'],
+  family: ['Finding new ways together', 'Space for every voice'],
+  trauma: ['Eye focus / Brainspotting', 'Safety and self-determination'],
+  creative: ['From thinking to experiencing', 'Imagination and inner images', 'Meditation and relaxation'],
+  alpacas: ['Experiencing relationships, not only talking about them'],
+  practical: ['First meeting', 'Who I work with', 'Confidentiality', 'Cancellation', 'Fees'],
+  about: ['Training', 'Professional experience', 'My interests']
+};
+const headings = new Set(de ? page.headings : enHeadings[page.key] ?? []);
+const listSection = new Set(de ? ['Meine Themenschwerpunkte', 'Meine Kompetenzbereiche', 'Ausbildungen', 'Arbeitserfahrungen', 'Meine Interessen'] : ['Areas I work with', 'Areas of expertise', 'Training', 'Professional experience', 'My interests']);
+const listLead = de ? 'Paartherapie kann dabei unterstützen,' : 'Couples therapy can help you';
+const questionStart = de ? 'Was spüre ich gerade?' : 'What am I sensing right now?';
+const isListItem = (_line: string, index: number) => {
+  if (page.key === 'offer' || page.key === 'individual' || page.key === 'about') {
+    let lastHeading = '';
+    for (let i = 0; i < index; i++) if (headings.has(lines[i])) lastHeading = lines[i];
+    return listSection.has(lastHeading);
+  }
+  if (page.key === 'couples') {
+    const start = lines.indexOf(listLead);
+    return index > start && index <= start + 7;
+  }
+  if (page.key === 'creative') {
+    const start = lines.indexOf(questionStart);
+    return index >= start && index < start + 4;
+  }
+  return false;
+};
+const blocks: { kind: 'heading' | 'paragraph' | 'list'; value: string | string[] }[] = [];
+for (let i = 0; i < lines.length; i++) {
+  const line = lines[i];
+  if (headings.has(line)) blocks.push({ kind: 'heading', value: line });
+  else if (isListItem(line, i)) {
+    if (blocks.at(-1)?.kind === 'list') (blocks.at(-1)!.value as string[]).push(line);
+    else blocks.push({ kind: 'list', value: [line] });
+  } else blocks.push({ kind: 'paragraph', value: line });
+}
+const services = serviceKeys.map((key) => pageByKey[key]);
+const isService = serviceKeys.includes(page.key);
+---
+<div class="interior-intro">
+  <div class="interior-intro-inner">
+    <div class="interior-heading"><a class="back-link" href={path(isService ? pageByKey.offer[lang] : pageByKey.home[lang])}>← {isService ? (de ? 'Therapeutisches Angebot' : 'Therapeutic offer') : (de ? 'Startseite' : 'Home')}</a><h1>{page.title[de ? 0 : 1]}</h1></div>
+    {page.image && <div class="interior-image"><img src={image(page.image)} alt={page.alt[de ? 0 : 1]} width="1000" height="680" /></div>}
+  </div>
+</div>
+<div class="page-ribbon" aria-hidden="true"><img src={image('pexels-pixabay-262713-2-1.jpg')} alt="" width="2000" height="200" loading="lazy" /></div>
+{page.key === 'contact' ? <div class="content-shell contact-page"><div class="location-column"><h2>{de ? 'Praxis Wien' : 'Vienna practice'}</h2><address>Mollardgasse 34/2/40-41<br />1060 {de ? 'Wien' : 'Vienna'}</address><h2>{de ? 'Praxis Mödling' : 'Mödling practice'}</h2><address>Klostergasse 19/5<br />2340 Mödling</address><p><a href="mailto:praxis@psychotherapie-lauzensky.at">praxis@psychotherapie-lauzensky.at</a><br /><a href="tel:+4368184087022">0681/840 870 22</a></p></div><ContactForm lang={lang} /></div> :
+<div class="content-shell article-layout">
+  <article class="prose">
+    {page.key === 'privacy' && <p class="notice-line">{de ? 'Hinweis zum bisherigen Webauftritt' : 'Notice about the previous website'}</p>}
+    {blocks.map((block) => block.kind === 'heading' ? <h2>{block.value}</h2> : block.kind === 'list' ? <ul>{(block.value as string[]).map((item) => <li>{item}</li>)}</ul> : <p>{block.value}</p>)}
+    {page.key === 'practical' && <p class="detail-note">{de ? 'Die auf der bisherigen Website genannten Kostenzuschüsse betrugen: BVAEB 50,20 €, SVS 50 €, ÖGK 33,70 € und KfA 37 €. Bitte erfragen Sie die aktuell gültigen Beträge direkt bei Ihrer Kasse.' : 'The previous website listed these reimbursement amounts: BVAEB €50.20, SVS €50, ÖGK €33.70 and KfA €37. Please check current amounts directly with your insurer.'}</p>}
+  </article>
+  {(page.key !== 'imprint' && page.key !== 'privacy') && <aside class="article-aside"><p>{de ? 'Ein erster Schritt' : 'A first step'}</p><h2>{de ? 'Sie möchten Kontakt aufnehmen?' : 'Would you like to get in touch?'}</h2><a class="text-link" href={path(pageByKey.contact[lang])}>{de ? 'Zur Kontaktseite' : 'Go to contact page'} <span aria-hidden="true">↗</span></a><div class="aside-rule"></div><span>Wien · Mödling</span></aside>}
+</div>}
+{(page.key === 'offer' || isService) && <section class="service-directory content-shell"><h2>{de ? 'Therapeutische Angebote' : 'Therapeutic services'}</h2><div class="service-links">{services.map((service) => <a href={path(service[lang])} aria-current={page.key === service.key ? 'page' : undefined}><span>{service.title[de ? 0 : 1]}</span><span aria-hidden="true">↗</span></a>)}</div></section>}
