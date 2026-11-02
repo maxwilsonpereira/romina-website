@@ -1,5 +1,8 @@
 ---
 import { image, pageByKey, path, serviceKeys, type Lang, type Page } from '../data/content';
+import caslonFont from '@fontsource/libre-caslon-text/files/libre-caslon-text-latin-400-normal.woff2?url';
+import manropeRegularFont from '@fontsource/manrope/files/manrope-latin-400-normal.woff2?url';
+import manropeSemiboldFont from '@fontsource/manrope/files/manrope-latin-600-normal.woff2?url';
 import '../styles/global.css';
 import '../styles/refinements.css';
 
@@ -31,6 +34,9 @@ const schema = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#e9e2d7" />
+    <link rel="preload" href={caslonFont} as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href={manropeRegularFont} as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href={manropeSemiboldFont} as="font" type="font/woff2" crossorigin="anonymous" />
     <title>{title}</title>
     <meta name="description" content={description} />
     {page.key === 'privacy' && <meta name="robots" content="noindex, follow" />}
