@@ -8,8 +8,8 @@ The site is a calm entrance to Mag. Romina Lauzensky's real practice in Vienna a
 - Libre Caslon Text for headings and Manrope for interface and body copy, both bundled locally through `@fontsource`.
 - Large, quiet serif headings; open reading columns; thin rules and direct text links. The terracotta action is reserved for contact.
 - Original photography remains unaltered. All eleven files in `public/images` match `.impeccable/source-images` by SHA-256. Source URLs and original file sizes are recorded in `.impeccable/source-images/manifest.json` rather than embedded in the images, preserving their bytes.
-- Motion is limited to subtle link/button response and native page scroll. Reduced-motion preference is respected.
-- Navigation uses readable text labels. The language switch shows full language names when space allows and larger DE/EN labels at narrow widths; flags are avoided because they identify countries rather than languages.
+- Motion is limited to subtle link/button response, the mobile menu opening and closing, and native page scroll. Reduced-motion preference is respected.
+- Desktop navigation uses readable text labels. The mobile navigation fills the screen below the header, with a sliding fade and a close icon. The language switch uses Austrian and American flag icons, following the owner's requested reference site; accessible labels identify the actual languages.
 
 ## Structure
 
