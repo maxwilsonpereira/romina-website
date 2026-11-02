@@ -8,6 +8,7 @@ The site is a calm entrance to Mag. Romina Lauzensky's real practice in Vienna a
 - Libre Caslon Text for headings and Manrope for interface and body copy, both bundled locally through `@fontsource`.
 - Large, quiet serif headings; open reading columns; thin rules and direct text links. The terracotta action is reserved for contact.
 - Original photography remains unaltered. All eleven files in `public/images` match `.impeccable/source-images` by SHA-256. Source URLs and original file sizes are recorded in `.impeccable/source-images/manifest.json` rather than embedded in the images, preserving their bytes.
+- `public/images/share-preview-768x330.jpg` is a separate link-preview crop of `Praxis2-768x512.jpg`, using source rows 130–459. The source photo and the browser favicon remain unchanged.
 - Motion is limited to subtle link/button response, the mobile menu opening and closing, and native page scroll. Reduced-motion preference is respected.
 - Desktop navigation uses 18 px bold uppercase labels with wider spacing. Only its labels are shortened to Angebot/Praxisinfos and Services/Practical info; page headings and URLs retain their full wording. With these shorter labels, the header switches to mobile navigation at 1040 px, before the text crowds the header. The mobile navigation fills the screen below the header, with a sliding fade, uppercase links, and a close icon. The language switch uses German and American flag icons; accessible labels identify the actual languages.
 
