@@ -61,20 +61,20 @@
 }
 .mobile-menu-toggle, .mobile-menu-panel { display: none; }
 
-@media (min-width: 1241px) {
+@media (min-width: 1041px) {
   .header-inner { width: min(1480px, calc(100% - 48px)); gap: 16px; }
   .desktop-nav {
     font-size: 1.125rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: .015em;
-    gap: clamp(10px, 1vw, 18px);
+    gap: clamp(22px, 2vw, 36px);
   }
   .offer-dropdown { width: 390px; }
   .offer-dropdown a { font-size: 1rem; line-height: 1.4; }
   .languages { gap: 5px; }
 }
-@media (max-width: 1240px) {
+@media (max-width: 1040px) {
   .site-header { position: sticky; top: 0; z-index: 40; height: 78px; }
   .desktop-nav { display: none; }
   .header-inner { position: relative; z-index: 2; }
