@@ -9,10 +9,13 @@ The site is a calm entrance to Mag. Romina Lauzensky's real practice in Vienna a
 - Large, quiet serif headings; open reading columns; thin rules and direct text links. The terracotta action is reserved for contact.
 - Original photography remains unaltered. All eleven files in `public/images` match `.impeccable/source-images` by SHA-256. Source URLs and original file sizes are recorded in `.impeccable/source-images/manifest.json` rather than embedded in the images, preserving their bytes.
 - Motion is limited to subtle link/button response and native page scroll. Reduced-motion preference is respected.
+- Navigation uses readable text labels. The language switch shows full language names when space allows and larger DE/EN labels at narrow widths; flags are avoided because they identify countries rather than languages.
 
 ## Structure
 
 The German URLs match the existing public routes. Every page has an English equivalent under `/en/`, with a switch to the same page in the other language. The five main destinations and six offer submenu pages remain discoverable on desktop and mobile. Interior pages use an image-led header, a readable article column, and direct contact links. All routes use the same footer.
+
+Interior pages move from a warm image header into a light reading surface. The offer overview then has a separate sage surface for its topic list and a warm surface for the service directory. The original floral banner file remains preserved, but its former 9 px ribbon was removed because it read as an image rendering defect.
 
 ## Contact and privacy
 

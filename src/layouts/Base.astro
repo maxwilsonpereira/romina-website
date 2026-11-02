@@ -1,6 +1,7 @@
 ---
 import { image, pageByKey, path, serviceKeys, type Lang, type Page } from '../data/content';
 import '../styles/global.css';
+import '../styles/refinements.css';
 
 interface Props { page: Page; lang: Lang; description: string }
 const { page, lang, description } = Astro.props;
@@ -64,7 +65,7 @@ const schema = {
           {nav.slice(2).map((p) => <a href={path(p[lang])} aria-current={page.key === p.key ? 'page' : undefined}>{label(p)}</a>)}
         </nav>
         <div class="header-end">
-          <nav class="languages" aria-label={isDe ? 'Sprache' : 'Language'}><a href={path(page.de)} lang="de" aria-current={isDe ? 'page' : undefined}>DE</a><span aria-hidden="true">/</span><a href={path(page.en)} lang="en" aria-current={!isDe ? 'page' : undefined}>EN</a></nav>
+          <nav class="languages" aria-label={isDe ? 'Sprache' : 'Language'}><a href={path(page.de)} lang="de" aria-current={isDe ? 'page' : undefined}><span class="language-long">Deutsch</span><span class="language-short">DE</span></a><span class="language-separator" aria-hidden="true">/</span><a href={path(page.en)} lang="en" aria-current={!isDe ? 'page' : undefined}><span class="language-long">English</span><span class="language-short">EN</span></a></nav>
           <details class="mobile-menu"><summary aria-label={isDe ? 'Menü öffnen' : 'Open menu'}><span></span><span></span></summary>
             <nav aria-label={isDe ? 'Mobile Navigation' : 'Mobile navigation'}>
               {nav.map((p) => <a href={path(p[lang])} aria-current={page.key === p.key ? 'page' : undefined}>{label(p)}</a>)}

@@ -1,0 +1,69 @@
+/* Interior surfaces: a clear transition from the image header to reading and browsing. */
+.interior-body { background: var(--cream); }
+.themes-section { background: #d9ded4; padding: 76px 0 88px; }
+.themes-inner h2 { margin: 0 0 32px; }
+.themes-inner ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 40px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.themes-inner li {
+  border-top: 1px solid #a8b5a7;
+  padding: 13px 0;
+  line-height: 1.45;
+}
+.themes-inner li:nth-last-child(-n+3) { border-bottom: 1px solid #a8b5a7; }
+.service-directory { background: #d9ded4; padding: 80px 0 100px; }
+.service-directory.offer-directory { background: var(--paper); }
+.service-directory h2 { margin: 0 0 35px; }
+.offer-overview .article-layout { padding-block: 82px 96px; }
+.offer-overview .prose p:last-child { margin-bottom: 0; }
+.article-aside h2 { margin-top: 0; }
+
+/* Reading and motion changes requested for the navigation and service links. */
+.service-links a {
+  transition: color .3s ease;
+}
+.service-links a span:last-child {
+  transition: color .3s ease;
+}
+.service-links a:hover { padding-left: 0; }
+.service-links a:hover span:last-child { color: var(--clay-dark); }
+.text-link { transition: color .3s ease; }
+.text-link:hover { gap: 14px; }
+.languages a, .desktop-nav a, .offer-dropdown a { transition: color .3s ease; }
+.languages a span { color: inherit; }
+.languages .language-short { display: none; }
+.languages .language-long { display: inline; }
+
+@media (min-width: 1181px) {
+  .desktop-nav { font-size: 1rem; gap: clamp(16px, 1.8vw, 27px); }
+  .languages { font-size: .96rem; gap: 12px; }
+}
+@media (min-width: 981px) and (max-width: 1180px) {
+  .desktop-nav { font-size: .91rem; gap: 11px; }
+  .header-inner { gap: 15px; }
+  .languages { font-size: .91rem; gap: 8px; }
+  .languages .language-long { display: none; }
+  .languages .language-short { display: inline; }
+}
+@media (max-width: 980px) {
+  .languages { font-size: 1rem; gap: 8px; }
+  .languages .language-long { display: none; }
+  .languages .language-short { display: inline; }
+  .themes-inner ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .themes-section { padding: 62px 0 72px; }
+  .themes-inner ul { grid-template-columns: 1fr; }
+  .themes-inner li:nth-last-child(-n+3) { border-bottom: 0; }
+  .themes-inner li:last-child { border-bottom: 1px solid #a8b5a7; }
+  .service-directory { padding: 64px 0 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-links a, .service-links a span:last-child, .text-link,
+  .languages a, .desktop-nav a, .offer-dropdown a { transition-duration: .01ms; }
+}
